@@ -11,6 +11,9 @@
 # next.js
 /.next/
 /out/
+/.idea/
+/.vscode/
+/.vitest/
 
 # production
 /build
@@ -26,8 +29,11 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
-.env*
-!.env.example
+.env
+.env.development
+.env.production
+.env.test
+.env.ci
 
 # vercel
 .vercel
@@ -35,3 +41,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# lock-file
+pnpm-lock.yaml

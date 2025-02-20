@@ -1,4 +1,20 @@
-import Link from 'next/link';
+import { VercelLogo } from "@/components/icons";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator
+} from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from "@/components/ui/tooltip";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Home,
   LineChart,
@@ -8,29 +24,12 @@ import {
   Settings,
   ShoppingCart,
   Users2
-} from 'lucide-react';
-
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/components/ui/breadcrumb';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/ui/tooltip';
-import { Analytics } from '@vercel/analytics/react';
-import { User } from './user';
-import { VercelLogo } from '@/components/icons';
-import Providers from './providers';
-import { NavItem } from './nav-item';
-import { SearchInput } from './search';
+} from "lucide-react";
+import Link from "next/link";
+import { NavItem } from "./nav-item";
+import Providers from "./providers";
+import { SearchInput } from "./search";
+import { User } from "./user";
 
 export default function DashboardLayout({
   children

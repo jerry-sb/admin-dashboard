@@ -1,12 +1,6 @@
-'use client';
+"use client";
 
-import {
-  TableHead,
-  TableRow,
-  TableHeader,
-  TableBody,
-  Table
-} from '@/components/ui/table';
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -14,24 +8,29 @@ import {
   CardFooter,
   CardHeader,
   CardTitle
-} from '@/components/ui/card';
-import { Product } from './product';
-import { SelectProduct } from '@/lib/db';
-import { useRouter } from 'next/navigation';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Product } from "./product";
 
 export function ProductsTable({
   products,
   offset,
   totalProducts
 }: {
-  products: SelectProduct[];
+  products: any[];
   offset: number;
   totalProducts: number;
 }) {
-  let router = useRouter();
-  let productsPerPage = 5;
+  const router = useRouter();
+  const productsPerPage = 5;
 
   function prevPage() {
     router.back();
@@ -78,10 +77,14 @@ export function ProductsTable({
       <CardFooter>
         <form className="flex items-center w-full justify-between">
           <div className="text-xs text-muted-foreground">
-            Showing{' '}
+            Showing{" "}
             <strong>
-              {Math.max(0, Math.min(offset - productsPerPage, totalProducts) + 1)}-{offset}
-            </strong>{' '}
+              {Math.max(
+                0,
+                Math.min(offset - productsPerPage, totalProducts) + 1
+              )}
+              -{offset}
+            </strong>{" "}
             of <strong>{totalProducts}</strong> products
           </div>
           <div className="flex">
